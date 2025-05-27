@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ProfileFragment"
+    android:background="@color/black">
+
+    <LinearLayout
+        android:id="@+id/bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tV_username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="3dp"
+                android:text="@string/username"
+                android:textColor="@color/white"
+                android:textSize="19sp"
+                android:textStyle="bold" />
+        </Toolbar>
+    </LinearLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="60dp">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/cIV_profile"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:src="@drawable/profile1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/countPost"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="-15dp"
+                android:layout_marginTop="15dp"
+                android:text="0"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/countFollower"
+                app:layout_constraintStart_toEndOf="@id/cIV_profile"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/post"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:text="postingan"
+                android:textColor="@color/white"
+                android:textSize="17sp"
+                app:layout_constraintEnd_toStartOf="@+id/countFollower"
+                app:layout_constraintHorizontal_bias="0.411"
+                app:layout_constraintStart_toEndOf="@id/cIV_profile"
+                app:layout_constraintTop_toBottomOf="@id/countPost" />
+
+            <TextView
+                android:id="@+id/countFollower"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="15dp"
+                android:text="980"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/countFollowing"
+                app:layout_constraintStart_toEndOf="@id/countPost"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/follower"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="pengikut"
+                android:textColor="@color/white"
+                android:textSize="17sp"
+                app:layout_constraintEnd_toStartOf="@+id/countFollowing"
+                app:layout_constraintHorizontal_bias="0.392"
+                app:layout_constraintStart_toEndOf="@id/countPost"
+                app:layout_constraintTop_toBottomOf="@id/countFollower" />
+
+            <TextView
+                android:id="@+id/countFollowing"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="15dp"
+                android:text="826"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/countFollower"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/Following"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="mengikuti"
+                android:textColor="@color/white"
+                android:textSize="17sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/countFollower"
+                app:layout_constraintTop_toBottomOf="@id/countFollowing" />
+
+            <LinearLayout
+                android:id="@+id/lL_editProfile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cIV_profile">
+
+                <TextView
+                    android:id="@+id/tV_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/username"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/bio"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="loreum ipsum"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_edit_profile"
+                android:layout_width="165dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:text="Edit profil"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:backgroundTint="@android:color/darker_gray"
+                app:cornerRadius="10dp"
+                app:layout_constraintEnd_toStartOf="@+id/btn_shareProfile"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lL_editProfile" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_shareProfile"
+                android:layout_width="165dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:text="Bagikan profil"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:backgroundTint="@android:color/darker_gray"
+                app:cornerRadius="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/btn_edit_profile"
+                app:layout_constraintTop_toBottomOf="@+id/lL_editProfile" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rV_highlight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintTop_toBottomOf="@+id/btn_edit_profile"
+                tools:listitem="@layout/item_story" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rV_feed_fragment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rV_highlight"
+                app:spanCount="3"
+                tools:listitem="@layout/item_single_image" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>
